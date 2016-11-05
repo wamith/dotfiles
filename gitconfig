@@ -1,0 +1,59 @@
+[user]
+	name = Wamith Mockbill
+	email = wamith@users.noreply.github.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+	pager = less -r
+
+[merge]
+	tool = vimdiff
+	summary=true
+
+[gc]
+	auto=1
+
+[alias]
+	l = log --pretty=format:"%cd\\ %C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate -n 10 --date=short
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lsd = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	dlc = diff --cached HEAD^
+	diff1 = diff --cached HEAD^
+	diff2 = diff --cached HEAD^^
+	diffnames = diff --name-only
+	unstage = reset HEAD
+	uncommit = reset --soft HEAD^
+
+	#show only files changed in a committ
+	difff = diff-tree --no-commit-id --name-only -r
+
+	#branch new and branch rm
+	bn = branch -b
+	brm = branch -D
+
+	b = branch -v
+	r = remote -v
+	t = tag -l
+
+
+	#see what's change since you did a pull
+	lc = log ORIG_HEAD.. --stat --no-merges
+	st = status
+	co = checkout
+	ch = checkout
+	cm = commit
+	ci = commit
+	br = branch
+	rv = checkout
+	today = log --since="6am"
+	purr = pull --rebase
+	standup = log --oneline --since=yesterday --author="Wamith"
+
+[push]
+	default = current
